@@ -1,0 +1,28 @@
+{
+  "name": "Obtener Galletas de YouTube",
+  "description": "Obtén tus cookies.txt solo de youtube para usar con XtraDownloader, NUNCA envía cookies a servidores externos o a terceros.",
+  "version": "0.8.0",
+  "manifest_version": 3,
+  "permissions": ["activeTab", "cookies", "downloads", "notifications"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/images/xtracookies16.png",
+      "32": "/images/xtracookies32.png",
+      "48": "/images/xtracookies48.png",
+      "128": "/images/xtracookies128.png"
+    }
+  },
+  "icons": {
+    "16": "/images/xtracookies16.png",
+    "32": "/images/xtracookies32.png",
+    "48": "/images/xtracookies48.png",
+    "128": "/images/xtracookies128.png"
+  },
+  "incognito": "split",
+  "background": {
+    "service_worker": "background.mjs",
+    "type": "module"
+  }
+}

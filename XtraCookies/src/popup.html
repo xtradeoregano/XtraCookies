@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>XtraCookies Exporter</title>
+    <link rel="stylesheet" href="popup.dark.css" />
+    <script src="popup.mjs" type="module" defer></script>
+  </head>
+  <body>
+    <h1>Exportar cookies</h1>
+    <hr />
+
+    <div class="export-btn-container">
+      <button id="export" class="export-btn">Exportar</button>
+      <button id="exportAs" class="export-btn">Exportar como...</button>
+      <button id="copy" class="export-btn">Copiar</button>
+    </div>
+
+    <div id="optionsContainer" class="option-container">
+      <label for="format">Formato:</label>
+      <select id="format">
+        <option value="netscape" selected>Netscape</option>
+        <option value="json">JSON</option>
+        <option value="header">Header</option>
+      </select>
+
+      <label for="nowrapOption" style="margin-left: 1em;">Evitar saltos:</label>
+      <input type="checkbox" id="nowrapOption" checked />
+    </div>
+
+    <div class="table-container">
+      <table id="netscapeTable" class="netscape-table nowrap">
+        <thead>
+          <tr>
+            <th>Dominio</th>
+            <th>Subdominios</th>
+            <th>Ruta</th>
+            <th>Seguro</th>
+            <th>Expira</th>
+            <th>Nombre</th>
+            <th>Valor</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="donation" style="text-align: center; font-style: italic; color: #aaa; margin-top: 1em;">
+      Invítame a un donut 🍩
+    </div>
+  </body>
+</html>

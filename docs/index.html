@@ -1,27 +1,68 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>XtraCookies 🍪</title>
-    <style>
-      body { font-family: sans-serif; background: #f4f4f4; padding: 2em; }
-      .container { max-width: 700px; background: white; padding: 2em; margin: auto; border-radius: 8px; box-shadow: 0 0 10px #ccc; }
-      h1 { color: #d2691e; text-align: center; }
-      a.button { display: inline-block; margin: 1em 0.5em 0 0; background: #d2691e; color: white; padding: 0.7em 1.5em; border-radius: 5px; text-decoration: none; }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h1>🍪 XtraCookies</h1>
-      <p><strong>Extensión para exportar cookies de YouTube</strong></p>
-      <p>Compatible con yt-dlp, privacidad 100 % local, sin servidores ni cuentas.</p>
-      <ul>
-        <li>✔️ Exporta en formato Netscape, JSON o Header</li>
-        <li>✔️ Sin conexión externa</li>
-        <li>✔️ Ideal para scripts, backups y magia de automatización</li>
-      </ul>
-      <a href="../XtraCookies_v1.zip" class="button">⬇️ Descargar extensión</a>
-      <a href="https://github.com/xtradeoregano/XtraCookies/blob/main/XtraCookies/Guia_XtraCookies%F0%9F%8D%AA.pdf" class="button">📄 Ver guía PDF</a>
-    </div>
-  </body>
-</html>
+<!-- 🔽 Botón flotante con fade-in y scroll ocultable -->
+<a id="boton-descarga" href="https://github.com/xtradeoregano/XtraCookies/releases/latest/download/XtraCookies_v1.zip" target="_blank">
+  ⬇️ Descargar ZIP de GitHub
+  <small>El código es público y auditable en GitHub</small>
+</a>
+
+<style>
+  #boton-descarga {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffd966;
+    color: black;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+
+  #boton-descarga.visible {
+    opacity: 1;
+  }
+
+  #boton-descarga small {
+    display: block;
+    font-size: 13px;
+    color: #444;
+    margin-top: 4px;
+  }
+
+  @media (max-width: 600px) {
+    #boton-descarga {
+      width: 90%;
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+</style>
+
+<script>
+  const btnDescarga = document.getElementById("boton-descarga");
+  let ultimoScroll = 0;
+
+  // Activar fade-in al cargar
+  window.addEventListener("DOMContentLoaded", () => {
+    btnDescarga.classList.add("visible");
+  });
+
+  // Ocultar al hacer scroll hacia abajo, mostrar al subir
+  window.addEventListener("scroll", () => {
+    const scrollActual = window.scrollY;
+    if (scrollActual > ultimoScroll && scrollActual > 60) {
+      btnDescarga.style.display = "none";
+    } else {
+      btnDescarga.style.display = "block";
+    }
+    ultimoScroll = scrollActual;
+  });
+</script>

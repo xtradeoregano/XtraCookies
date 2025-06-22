@@ -13,6 +13,25 @@
   <body>
     <div class="container">
       <h1>🍪 XtraCookies</h1>
+
+      <details open style="margin: 1em 0; border: 1px solid #ccc; padding: 1em; border-radius: 6px; background: #fdf8f0;">
+        <summary style="font-weight: bold; font-size: 16px; cursor: pointer;">⚠️ Problemas comunes y cómo solucionarlos</summary>
+        <ul style="margin-top: 0.5em; font-size: 15px; line-height: 1.6;">
+          <li><strong>🔍 Buscas algo y no aparece:</strong><br>
+            Posible causa: El video está restringido por región o edad, o falta el archivo de cookies.<br>
+            <em>💡 Solución: Exporta tus cookies con esta extensión y vuelve a intentarlo.</em>
+          </li>
+          <li><strong>📥 Encuentra el vídeo pero no descarga:</strong><br>
+            Posible causa: Derechos de autor o cuenta privada.<br>
+            <em>💡 Solución: Asegúrate de que el vídeo sea accesible desde tu cuenta con las cookies cargadas.</em>
+          </li>
+          <li><strong>🎞️ Descarga bien pero no convierte:</strong><br>
+            Posible causa: Error en ffmpeg o formato incompatible.<br>
+            <em>💡 Solución: Cambia el formato de salida o revisa los logs.</em>
+          </li>
+        </ul>
+      </details>
+
       <p><strong>Extensión para exportar cookies de YouTube</strong></p>
       <p>Compatible con yt-dlp, privacidad 100 % local, sin servidores ni cuentas.</p>
       <ul>
@@ -28,76 +47,74 @@
           Mira la guía primero, descarga el ZIP, descomprímelo y cárgalo sin empaquetar desde tu navegador.  
           Si prefieres revisar el código fuente o compilarlo tú mismo, puedes explorar el proyecto completo en GitHub.
         </em>
-
       </p>
     </div>
+
+    <!-- 🔽 Botón flotante con fade-in y scroll ocultable -->
+    <a id="boton-descarga" href="https://github.com/xtradeoregano/XtraCookies/releases/download/v3.8.0/XtraCookies_v3.zip" target="_blank">
+      ⬇️ Descargar ZIP de GitHub
+      <small>El código es público y auditable en GitHub</small>
+    </a>
+
+    <style>
+      #boton-descarga {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #ffd966;
+        color: black;
+        font-family: 'Segoe UI', sans-serif;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        z-index: 9999;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        text-decoration: none;
+        opacity: 0;
+        transition: opacity 1.2s ease;
+      }
+
+      #boton-descarga.visible {
+        opacity: 1;
+      }
+
+      #boton-descarga small {
+        display: block;
+        font-size: 13px;
+        color: #444;
+        margin-top: 4px;
+      }
+
+      @media (max-width: 600px) {
+        #boton-descarga {
+          width: 90%;
+          font-size: 15px;
+          padding: 10px;
+        }
+      }
+    </style>
+
+    <script>
+      const btnDescarga = document.getElementById("boton-descarga");
+      let ultimoScroll = 0;
+
+      window.addEventListener("DOMContentLoaded", () => {
+        btnDescarga.classList.add("visible");
+      });
+
+      window.addEventListener("scroll", () => {
+        const scrollActual = window.scrollY;
+        if (scrollActual > ultimoScroll && scrollActual > 60) {
+          btnDescarga.style.display = "none";
+        } else {
+          btnDescarga.style.display = "block";
+        }
+        ultimoScroll = scrollActual;
+      });
+    </script>
   </body>
 </html>
-<!-- 🔽 Botón flotante con fade-in y scroll ocultable -->
-<a id="boton-descarga" href="https://github.com/xtradeoregano/XtraCookies/releases/download/v3.8.0/XtraCookies_v3.zip" target="_blank">
-  ⬇️ Descargar ZIP de GitHub
-  <small>El código es público y auditable en GitHub</small>
-</a>
-
-<style>
-  #boton-descarga {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #ffd966;
-    color: black;
-    font-family: 'Segoe UI', sans-serif;
-    font-size: 16px;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    z-index: 9999;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    text-align: center;
-    text-decoration: none;
-    opacity: 0;
-    transition: opacity 1.2s ease;
-  }
-
-  #boton-descarga.visible {
-    opacity: 1;
-  }
-
-  #boton-descarga small {
-    display: block;
-    font-size: 13px;
-    color: #444;
-    margin-top: 4px;
-  }
-
-  @media (max-width: 600px) {
-    #boton-descarga {
-      width: 90%;
-      font-size: 15px;
-      padding: 10px;
-    }
-  }
-</style>
-
-<script>
-  const btnDescarga = document.getElementById("boton-descarga");
-  let ultimoScroll = 0;
-
-  // Activar fade-in al cargar
-  window.addEventListener("DOMContentLoaded", () => {
-    btnDescarga.classList.add("visible");
-  });
-
-  // Ocultar al hacer scroll hacia abajo, mostrar al subir
-  window.addEventListener("scroll", () => {
-    const scrollActual = window.scrollY;
-    if (scrollActual > ultimoScroll && scrollActual > 60) {
-      btnDescarga.style.display = "none";
-    } else {
-      btnDescarga.style.display = "block";
-    }
-    ultimoScroll = scrollActual;
-  });
-</script>

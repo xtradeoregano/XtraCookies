@@ -18,21 +18,42 @@
         <summary style="font-weight: bold; font-size: 16px; cursor: pointer;">⚠️ Problemas comunes y cómo solucionarlos</summary>
         <ul style="margin-top: 0.5em; font-size: 15px; line-height: 1.6;">
           <li><strong>🔍 Buscas algo y no aparece:</strong><br>
-            Posible causa: El video está restringido por región o edad, o falta el archivo de cookies.<br>
-            <em>💡 Solución: Exporta tus cookies con esta extensión y vuelve a intentarlo.</em>
+            Posible causa: El contenido puede estar restringido por región o edad, o falta el archivo de cookies.<br>
+            <em>💡 Solución:</em>
+            <ul style="margin-top: 4px; padding-left: 1.2em; font-size: 15px;">
+              <li>Prueba con otra URL o archivo para ver si solo afecta a ese caso.</li>
+              <li>Exporta tus cookies con esta extensión e inténtalo de nuevo.</li>
+            </ul>
           </li>
           <li><strong>📥 Encuentra el vídeo pero no descarga:</strong><br>
-            Posible causa: Derechos de autor o cuenta privada.<br>
-            <em>💡 Solución: Asegúrate de que el vídeo sea accesible desde tu cuenta con las cookies cargadas.</em>
+            Posible causa: El vídeo puede estar protegido por derechos o requerir sesión activa.<br>
+            <em>💡 Solución:</em>
+            <ul style="margin-top: 4px; padding-left: 1.2em; font-size: 15px;">
+              <li>Asegúrate de tener cookies válidas exportadas desde tu navegador.</li>
+              <li>Revisa si el contenido es privado, solo para miembros o restringido.</li>
+            </ul>
           </li>
           <li><strong>🎞️ Descarga bien pero no convierte:</strong><br>
-            Posible causa: Error en ffmpeg o formato incompatible.<br>
-            <em>💡 Solución: Cambia el formato de salida o revisa los logs.</em>
+            Posible causa: Formato no compatible o error de conversión local.<br>
+            <em>💡 Solución:</em>
+            <ul style="margin-top: 4px; padding-left: 1.2em; font-size: 15px;">
+              <li>Revisa los registros del sistema o cambia el formato de salida.</li>
+              <li>Asegúrate de tener `ffmpeg` correctamente instalado.</li>
+            </ul>
+          </li>
+          <li><strong>⏱️ Has descargado muchos vídeos y ya no baja más:</strong><br>
+            Posible causa: La web de vídeos roja puede imponer límites si haces demasiadas descargas en poco tiempo desde la misma red.<br>
+            <em>💡 Solución:</em>
+            <ul style="margin-top: 4px; padding-left: 1.2em; font-size: 15px;">
+              <li>Evita superar 20–30 descargas por hora sin identificación.</li>
+              <li>Espera al menos 60 minutos antes de reintentar para evitar bloqueos temporales.</li>
+              <li>Usa cookies válidas para que el sistema te reconozca como usuario real.</li>
+            </ul>
           </li>
         </ul>
       </details>
 
-      <p><strong>Extensión para exportar cookies de YouTube</strong></p>
+      <p><strong>Extensión para exportar cookies de la web de vídeos roja</strong></p>
       <p>Compatible con yt-dlp, privacidad 100 % local, sin servidores ni cuentas.</p>
       <ul>
         <li>✔️ Exporta en formato Netscape, JSON o Header</li>
@@ -43,8 +64,8 @@
       <a href="https://github.com/xtradeoregano/XtraCookies/blob/main/XtraCookies/Guia_XtraCookies%F0%9F%8D%AA.pdf" class="button">📄 Ver guía PDF</a>
       <p style="font-size: 14px; color: #444; margin-top: 1.5em;">
         <em>
-          ¿Solo quieres usar la extensión?  
-          Mira la guía primero, descarga el ZIP, descomprímelo y cárgalo sin empaquetar desde tu navegador.  
+          ¿Solo quieres usar la extensión?<br>
+          Mira la guía primero, descarga el ZIP, descomprímelo y cárgalo sin empaquetar desde tu navegador.<br>
           Si prefieres revisar el código fuente o compilarlo tú mismo, puedes explorar el proyecto completo en GitHub.
         </em>
       </p>
@@ -118,3 +139,4 @@
     </script>
   </body>
 </html>
+
